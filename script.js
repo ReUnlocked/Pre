@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const searchBar = document.querySelector(".search-bar");
-    const gameCards = document.querySelectorAll(".game-card");
     const settingsButton = document.querySelector(".settings-button");
     const settingsMenu = document.querySelector(".settings-menu");
     const applyButton = document.querySelector(".apply-button");
@@ -16,32 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     closeButton.addEventListener("click", function () {
         settingsMenu.style.display = "none";
-    });
-    
-    searchBar.addEventListener("input", function () {
-        const searchText = searchBar.value.toLowerCase().trim();
-
-        if (searchText === "") {
-            // If the search bar is empty, show all game sections
-            document.querySelectorAll(".game-section").forEach(section => {
-                section.style.display = "block";
-            });
-        } else {
-            // Hide all sections and only show matching game cards
-            document.querySelectorAll(".game-section").forEach(section => {
-                section.style.display = "none";
-            });
-
-            gameCards.forEach(card => {
-                const title = card.getAttribute("data-title").toLowerCase();
-                if (title.includes(searchText)) {
-                    card.style.display = "flex";
-                    card.closest(".game-section").style.display = "block";
-                } else {
-                    card.style.display = "none";
-                }
-            });
-        }
     });
 
     applyButton.addEventListener("click", function () {
