@@ -30,6 +30,17 @@ header {
     position: relative;
 }
 
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+}
+
+.logo a:hover {
+    opacity: 0.8; /* Optional: Add hover effect */
+}
+
 .logo {
     display: flex;
     align-items: center;
