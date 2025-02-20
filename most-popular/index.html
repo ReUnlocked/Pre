@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="reunlocked, games, unblocked games, fun, retro bowl, re unlocked, play, cool math game, unblocked game, google games, unblocked 66, run, cool math run, cool math games run, 66 unblocked games, cool math games unblocked 66, run unblocked, run 3 cool math games, youtube unblocked, cool math run 3, run 3, run 3 unblocked games, run 3 unblocked, happy wheels, snake unblocked, happy wheels unblocked, snake, cool math games snake, slope unblocked games, unblocked games happy wheels, slope" />
+    <meta name="description" content="ReUnlocked, the best free games website!">
+    <title>ReUnlocked</title>
+    <link rel="stylesheet" href="/styles.css"> 
+    <script defer src="/script.js"></script>
+    <link rel="icon" href="https://raw.githubusercontent.com/ReUnlocked/Assets/refs/heads/main/icon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://raw.githubusercontent.com/ReUnlocked/Assets/refs/heads/main/branding.png" alt="ReUnlocked Logo">
+            <span>ReUnlocked</span>
+        </div>
+        <div class="search-container">
+            <input type="text" class="search-bar" placeholder="Search our game collection..." onkeydown="handleSearch(event)">
+        </div>
+         <button class="settings-button"><img src="https://raw.githubusercontent.com/ReUnlocked/Assets/refs/heads/main/settings.png" alt="Settings"></button>
+    </header>
+
+    <div class="game-sections">
+        <!-- Most Popular Section -->
+        <div class="game-section">
+            <h2>Most Popular</h2>
+            <div class="game-grid">
+                <div class="game-card" data-title="1v1.lol">
+                    <img src="https://raw.githubusercontent.com/ReUnlocked/Assets/refs/heads/main/games/1v1lol.png" alt="1v1.lol">
+                    <div class="game-title">1v1.lol</div>
+                    <a href="/games/1v1lol" class="play-button">Play</a>
+                </div>
+                <div class="game-card" data-title="Among Us">
+                    <img src="https://raw.githubusercontent.com/ReUnlocked/Assets/refs/heads/main/games/amongus.png" alt="Among Us">
+                    <div class="game-title">Among Us</div>
+                    <a href="/games/among-us" class="play-button">Play</a>
+                </div>
+                <div class="game-card" data-title="2048">
+                    <img src="https://raw.githubusercontent.com/ReUnlocked/Assets/refs/heads/main/games/2048.png" alt="2048">
+                    <div class="game-title">2048</div>
+                    <a href="/games/2048" class="play-button">Play</a>
+                </div>
+                <div class="game-card" data-title="Bloons TD">
+                    <img src="https://raw.githubusercontent.com/ReUnlocked/Assets/refs/heads/main/games/bloonstd.png" alt="Bloons TD">
+                    <div class="game-title">Bloons TD</div>
+                    <a href="/games/bloons-td" class="play-button">Play</a>
+                </div>
+                <div class="game-card see-more-card">
+                    <div class="game-title">See More</div>
+                    <a href="/most-popular" class="play-button">See More</a>
+                </div>
+            </div>
+        </div>
+
+      
+    <div class="settings-menu">
+        <button class="close-button">X</button>
+        <label>Tab Name: <input type="text" id="tabName"></label>
+        <label>Favicon URL: <input type="text" id="faviconURL"></label>
+        <label>Panic Key: <input type="text" id="panicKey"></label>
+        <label>Panic URL: <input type="text" id="panicURL"></label>
+        <button class="apply-button">Apply</button>
+    </div>
+
+    <script>
+    function handleSearch(event) {
+        if (event.key === "Enter") {
+            const query = event.target.value.trim();
+            if (query !== "") {
+                window.location.href = `/all-games?search=${encodeURIComponent(query)}`;
+            }
+        }
+    }
+</script>
+    
+</body>
+</html>
