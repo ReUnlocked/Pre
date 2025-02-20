@@ -176,6 +176,14 @@
         <label>Panic URL: <input type="text" id="panicURL"></label>
         <button class="apply-button">Apply</button>
     </div>
+
+    <script>
+    function redirectToSearch(query) {
+        if (query.trim() !== "") {
+            window.location.href = `/all-games?search=${encodeURIComponent(query)}`;
+        }
+    }
+</script>
     
 </body>
 </html>
