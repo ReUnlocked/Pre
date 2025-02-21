@@ -13,10 +13,10 @@
 <body>
     <header>
         <div class="logo">
-        <a href="/">
-            <img src="https://raw.githubusercontent.com/ReUnlocked/Assets/refs/heads/main/branding.png" alt="ReUnlocked Logo">
-            <span>ReUnlocked</span>
-        </a>
+            <a href="/">
+                <img src="https://raw.githubusercontent.com/ReUnlocked/Assets/refs/heads/main/branding.png" alt="ReUnlocked Logo">
+                <span>ReUnlocked</span>
+            </a>
         </div>
         <div class="search-container">
             <input type="text" class="search-bar" placeholder="Search our game collection..." oninput="filterGames(this.value)">
@@ -24,8 +24,13 @@
         <button class="settings-button"><img src="https://raw.githubusercontent.com/ReUnlocked/Assets/refs/heads/main/settings.png" alt="Settings"></button>
     </header>
 
-    <div class="game-grid" id="all-games-grid">
-        <!-- All game cards will be dynamically inserted here -->
+    <div class="game-sections">
+        <div class="game-section">
+            <h2>All Games</h2>
+            <div class="game-grid" id="all-games-grid">
+                <!-- All game cards will be dynamically inserted here -->
+            </div>
+        </div>
     </div>
 
     <div class="settings-menu">
