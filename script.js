@@ -41,3 +41,23 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+// Function to apply a preset
+function applyPreset(tabName, faviconURL) {
+    // Update the tab name input
+    document.getElementById("tabName").value = tabName;
+
+    // Update the favicon URL input
+    document.getElementById("faviconURL").value = faviconURL;
+
+    // Update the favicon dynamically
+    const faviconLink = document.querySelector("link[rel='icon']");
+    if (faviconLink) {
+        faviconLink.href = faviconURL;
+    } else {
+        const newFaviconLink = document.createElement("link");
+        newFaviconLink.rel = "icon";
+        newFaviconLink.href = faviconURL;
+        document.head.appendChild(newFaviconLink);
+    }
+}
