@@ -283,3 +283,48 @@ header {
         width: 100%;
     }
 }
+
+/* Tab Presets Section */
+.tab-presets {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+}
+
+.tab-presets h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #00ff88;
+}
+
+.preset-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.preset-button {
+    display: flex;
+    align-items: center;
+    background: #333;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.preset-button:hover {
+    background: #444;
+}
+
+.preset-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.preset-button span {
+    font-size: 0.9rem;
+    color: white;
+}
