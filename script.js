@@ -21,8 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
         showPopup("Settings Saved.");
     });
 
-    resetButton.addEventListener("click", function () {
 
+    resetButton.addEventListener("click", function () {
+  
         localStorage.removeItem("tabName");
         localStorage.removeItem("faviconURL");
         localStorage.removeItem("panicKey");
