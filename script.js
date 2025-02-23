@@ -87,3 +87,23 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 10000);
     }
 });
+
+function showPopup(message) {
+    const popup = document.createElement("div");
+    popup.className = "notification-popup";
+    popup.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke="currentColor" stroke-width="2" class="lucide lucide-circle-check">
+            <circle cx="12" cy="12" r="10" key="1mglay"></circle>
+            <path d="m9 12 2 2 4-4" key="dzmm74"></path>
+        </svg>
+        <span>${message}</span>
+    `;
+    document.body.appendChild(popup);
+
+    setTimeout(() => popup.classList.add("show"), 10);
+
+    setTimeout(() => {
+        popup.classList.remove("show");
+        setTimeout(() => popup.remove(), 300);
+    }, 10000);
+}
