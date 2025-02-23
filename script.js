@@ -1,29 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const settingsButton = document.querySelector(".settings-button");
-    const settingsMenu = document.querySelector(".settings-menu");
-    const applyButton = document.querySelector(".apply-button");
-    const closeButton = document.querySelector(".close-button");
+    const saveButton = document.querySelector(".save-button");
+    const resetButton = document.querySelector(".reset-button");
 
-    if (settingsMenu) {
-        settingsMenu.style.display = "none";
-    }
-
-    settingsButton.addEventListener("click", function () {
-        settingsMenu.style.display = "block";
-    });
-
-    closeButton.addEventListener("click", function () {
-        settingsMenu.style.display = "none";
-    });
-
-    applyButton.addEventListener("click", function () {
+    // Save Settings
+    saveButton.addEventListener("click", function () {
         const tabName = document.getElementById("tabName").value;
         const faviconURL = document.getElementById("faviconURL").value;
         const panicKey = document.getElementById("panicKey").value;
         const panicURL = document.getElementById("panicURL").value;
 
+        // Update tab title and favicon
         if (tabName) document.title = tabName;
-
         if (faviconURL) {
             let link = document.querySelector("link[rel='icon']");
             if (!link) {
@@ -34,11 +21,27 @@ document.addEventListener("DOMContentLoaded", function () {
             link.href = faviconURL;
         }
 
-        document.addEventListener("keydown", function (event) {
-            if (event.key === panicKey) {
-                window.location.href = panicURL;
-            }
-        });
+        // Save panic key and URL (you can use localStorage or a backend for persistence)
+        console.log("Settings Saved:", { tabName, faviconURL, panicKey, panicURL });
+        alert("Settings saved!");
+    });
+
+    // Reset Settings
+    resetButton.addEventListener("click", function () {
+        document.getElementById("tabName").value = "";
+        document.getElementById("faviconURL").value = "";
+        document.getElementById("panicKey").value = "";
+        document.getElementById("panicURL").value = "";
+
+        // Reset tab title and favicon to default
+        document.title = "ReUnlocked";
+        const link = document.querySelector("link[rel='icon']");
+        if (link) {
+            link.href = "https://raw.githubusercontent.com/ReUnlocked/Assets/refs/heads/main/icon.ico";
+        }
+
+        console.log("Settings Reset");
+        alert("Settings reset!");
     });
 });
 
