@@ -22,24 +22,16 @@ document.addEventListener("DOMContentLoaded", function () {
         const panicKey = document.getElementById("panicKey").value;
         const panicURL = document.getElementById("panicURL").value;
 
-        console.log("Tab Name:", tabName);
-        console.log("Favicon URL:", faviconURL);
-        console.log("Panic Key:", panicKey);
-        console.log("Panic URL:", panicURL);
-
         if (tabName) document.title = tabName;
 
         if (faviconURL) {
-            console.log("Updating favicon...");
             let link = document.querySelector("link[rel='icon']");
             if (!link) {
-                console.log("Creating new favicon link...");
                 link = document.createElement("link");
                 link.rel = "icon";
                 document.head.appendChild(link);
             }
             link.href = faviconURL;
-            console.log("Favicon updated:", link.href);
         }
 
         document.addEventListener("keydown", function (event) {
@@ -50,13 +42,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// Function to apply a preset
 function applyPreset(tabName, faviconURL) {
-
+    // Update the tab name input
     document.getElementById("tabName").value = tabName;
 
+    // Update the favicon URL input
     document.getElementById("faviconURL").value = faviconURL;
 
+    // Update the tab title dynamically
+    document.title = tabName;
 
+    // Update the favicon dynamically
     const faviconLink = document.querySelector("link[rel='icon']");
     if (faviconLink) {
         faviconLink.href = faviconURL;
