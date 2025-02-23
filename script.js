@@ -88,6 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+// Function to show the popup
 function showPopup(message) {
     const popup = document.createElement("div");
     popup.className = "notification-popup";
@@ -100,10 +101,34 @@ function showPopup(message) {
     `;
     document.body.appendChild(popup);
 
+    // Trigger the show animation
     setTimeout(() => popup.classList.add("show"), 10);
 
+    // Remove the popup after 10 seconds
     setTimeout(() => {
         popup.classList.remove("show");
-        setTimeout(() => popup.remove(), 300);
+        setTimeout(() => popup.remove(), 300); // Wait for the fade-out animation
     }, 10000);
 }
+
+// Function to fetch the latest announcement
+async function fetchLatestAnnouncement() {
+    try {
+        const response = await fetch("/announcement");
+        if (!response.ok) {
+            throw new Error("Failed to fetch announcement");
+        }
+        const data = await response.json();
+        if (data.message) {
+            showPopup(data.message); // Use your existing showPopup function
+        }
+    } catch (error) {
+        console.error("Error fetching announcement:", error);
+    }
+}
+
+// Fetch the latest announcement every 30 seconds
+setInterval(fetchLatestAnnouncement, 30000);
+
+// Fetch the announcement immediately when the page loads
+fetchLatestAnnouncement();
