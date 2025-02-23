@@ -79,8 +79,6 @@ header {
 }
 
 .settings-button {
-    position: absolute;
-    right: 20px;
     background: none;
     border: none;
     cursor: pointer;
@@ -94,6 +92,12 @@ header {
 .settings-button img {
     width: 24px;
     height: 24px;
+}
+
+/* Remove default link styling */
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .settings-button svg {
@@ -200,78 +204,6 @@ header {
     margin-top: 10px;
 }
 
-.settings-menu {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 360px;
-    height: 100%;
-    background: #1a1a1a;
-    padding: 20px;
-    overflow-y: auto;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-}
-
-.settings-menu input {
-    width: calc(100% - 20px);
-    padding: 12px;
-    border-radius: 20px;
-    border: 2px solid #444;
-    outline: none;
-    font-size: 1rem;
-    background: #111;
-    color: white;
-    text-align: center;
-    transition: 0.3s;
-    margin-bottom: 10px;
-}
-
-.apply-button {
-    background: #00ff88;
-    color: black;
-    text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 25px;
-    font-weight: bold;
-    transition: 0.3s;
-    font-size: 1.2rem;
-    border: none;
-    cursor: pointer;
-    display: block;
-    width: 100%;
-    margin-top: 12px;
-}
-
-.apply-button:hover {
-    background: #00cc66;
-}
-
-.close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: red;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.apply-button:hover {
-    background: #00cc66;
-}
-
-.settings-button img {
-    width: 24px;
-    height: 24px;
-}
-
-.settings-menu-open .search-container {
-    transform: translateX(-100px);
-}
-
 @media (max-width: 768px) {
     .game-card {
         width: calc(50% - 12px);
@@ -320,6 +252,8 @@ header {
     text-decoration: none;
     color: inherit;
 }
+
+
 
 /* Settings Container */
 .settings-container {
