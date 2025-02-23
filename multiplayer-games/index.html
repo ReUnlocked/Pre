@@ -102,27 +102,6 @@
                 </div>
             </div>
         </div>
-
-      
-    <div class="settings-menu">
-        <button class="close-button">X</button>
-        <label>Tab Name: <input type="text" id="tabName"></label>
-        <label>Favicon URL: <input type="text" id="faviconURL"></label>
-        <label>Panic Key: <input type="text" id="panicKey"></label>
-        <label>Panic URL: <input type="text" id="panicURL"></label>
-        <button class="apply-button">Apply</button>
-    </div>
-
-    <script>
-    function handleSearch(event) {
-        if (event.key === "Enter") {
-            const query = event.target.value.trim();
-            if (query !== "") {
-                window.location.href = `/all-games?search=${encodeURIComponent(query)}`;
-            }
-        }
-    }
-</script>
     
 </body>
 </html>
