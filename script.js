@@ -114,13 +114,13 @@ function showPopup(message) {
 // Function to fetch the latest announcement
 async function fetchLatestAnnouncement() {
     try {
-        const response = await fetch("/announcement");
+        const response = await fetch("http://192.168.1.241:3000//announcement");
         if (!response.ok) {
             throw new Error("Failed to fetch announcement");
         }
         const data = await response.json();
         if (data.message) {
-            showPopup(data.message); // Use your existing showPopup function
+            showPopup(data.message);
         }
     } catch (error) {
         console.error("Error fetching announcement:", error);
