@@ -105,16 +105,6 @@ a {
     color: inherit;
 }
 
-.settings-button svg {
-    width: 24px;
-    height: 24px;
-    stroke: currentColor;
-    stroke-width: 2;
-    fill: none;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
 .game-sections {
     padding: 20px;
     max-width: 1400px;
