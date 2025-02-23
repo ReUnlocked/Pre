@@ -11,6 +11,23 @@
     <link rel="icon" href="https://raw.githubusercontent.com/ReUnlocked/Assets/refs/heads/main/icon.ico" type="image/x-icon">
 </head>
 <body>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const tabName = localStorage.getItem("tabName");
+        const faviconURL = localStorage.getItem("faviconURL");
+
+        if (tabName) document.title = tabName;
+        if (faviconURL) {
+            let link = document.querySelector("link[rel='icon']");
+            if (!link) {
+                link = document.createElement("link");
+                link.rel = "icon";
+                document.head.appendChild(link);
+            }
+            link.href = faviconURL;
+        }
+    });
+</script>
     <header>
         <div class="logo">
         <a href="/">
