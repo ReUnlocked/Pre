@@ -287,7 +287,7 @@ header {
 .input-group input {
     flex: 1;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 25px; /* Rounded corners */
     border: 1px solid #444;
     background: #111;
     color: white;
@@ -310,7 +310,7 @@ header {
 .save-button, .reset-button {
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px; /* Rounded corners */
     font-size: 1rem;
     cursor: pointer;
     transition: 0.3s;
