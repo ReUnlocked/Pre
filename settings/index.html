@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - ReUnlocked</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" href="https://raw.githubusercontent.com/ReUnlocked/Assets/refs/heads/main/icon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/">
+                <img src="https://raw.githubusercontent.com/ReUnlocked/Assets/refs/heads/main/branding.png" alt="ReUnlocked Logo">
+                <span>ReUnlocked</span>
+            </a>
+        </div>
+    </header>
+
+    <div class="settings-container">
+        <!-- Cloaking Section -->
+        <div class="settings-section">
+            <h2>Cloaking</h2>
+            <p class="description">Change how ReUnlocked appears in your browser</p>
+            <div class="input-group">
+                <input type="text" id="tabName" placeholder="Tab Name">
+                <input type="text" id="faviconURL" placeholder="Tab Icon">
+            </div>
+        </div>
+
+        <!-- Panic Key Section -->
+        <div class="settings-section">
+            <h2>Panic Key</h2>
+            <p class="description">Press a key to redirect to a URL (may work in games soon)</p>
+            <div class="input-group">
+                <input type="text" id="panicKey" placeholder="Panic Key">
+                <input type="text" id="panicURL" placeholder="Panic URL">
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="buttons">
+            <button class="save-button">Save</button>
+            <button class="reset-button">Reset</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
