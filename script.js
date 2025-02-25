@@ -114,7 +114,7 @@ function showPopup(message) {
 // Function to fetch the latest announcement
 async function fetchLatestAnnouncement() {
     try {
-        const response = await fetch("https://api.reunlocked.fun/announcement");
+        const response = await fetch("https://reunlocked.fun/api/announcement");
         if (!response.ok) {
             throw new Error("Failed to fetch announcement");
         }
