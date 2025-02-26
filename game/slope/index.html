@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game - ReUnlocked</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/game/styles.css">
     <script defer src="/script.js"></script>
     <link rel="icon" href="https://raw.githubusercontent.com/ReUnlocked/Assets/refs/heads/main/icon.ico" type="image/x-icon">
 </head>
 <body>
+
     <header>
         <div class="logo">
             <a href="/">
@@ -16,19 +17,27 @@
                 <span>ReUnlocked</span>
             </a>
         </div>
-        <button id="fullscreen-button">Full Screen</button>
+        <button class="settings-button">
+            <img src="https://raw.githubusercontent.com/ReUnlocked/Assets/refs/heads/main/settings.png" alt="Settings">
+        </button>
     </header>
 
+    <!-- Game Container -->
     <div class="game-container">
-        <iframe id="game-iframe" src="https://reunlocked.fun/games/slope/index.html" frameborder="0" allowfullscreen></iframe>
+        <iframe id="game-iframe" src="https://reunlocked.fun/games/slope/" frameborder="0" allowfullscreen></iframe>
+        <button id="fullscreen-button">Full Screen</button>
     </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            // Extract the game name from the URL
             const gameName = window.location.pathname.split('/').pop();
             const iframe = document.getElementById('game-iframe');
-            iframe.src = `/games/${gameName}`;
 
+            // Set the iframe source to the game directory
+            iframe.src = `/games/${gameName}/`; // Ensure the trailing slash is included
+
+            // Fullscreen button functionality
             const fullscreenButton = document.getElementById('fullscreen-button');
             fullscreenButton.addEventListener('click', () => {
                 if (iframe.requestFullscreen) {
@@ -56,7 +65,14 @@
                 }
                 link.href = faviconURL;
             }
-        });
+
+            // Panic Key functionality
+            document.addEventListener('keydown', function (event) {
+                const panicKey = localStorage.getItem("panicKey") || "Escape"; // Default to Escape key
+                if (event.key === panicKey) {
+                    window.location.href = "/"; // Redirect to home page
+                }
+            });
     </script>
 </body>
 </html>
