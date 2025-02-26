@@ -1,9 +1,10 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #333; /* Dark background for contrast */
+    color: #fff; /* White text for all content */
 }
 
 .about-container {
@@ -16,22 +17,26 @@ body {
     margin-bottom: 40px;
 }
 
+/* Left-aligned section headers with white text */
 .section-header {
     font-size: 2rem;
-    text-align: center;
+    text-align: left; /* Left-aligned */
     margin-bottom: 20px;
-    color: #444;
+    color: #fff; /* White text */
+    padding-left: 20px; /* Add some padding for better alignment */
 }
 
+/* Centered profile grid */
 .profile-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; /* Center the profiles horizontally */
     gap: 20px;
 }
 
+/* Centered profile content */
 .profile {
-    text-align: center;
+    text-align: center; /* Center the image, name, and role */
     width: 150px;
 }
 
@@ -52,11 +57,12 @@ body {
     font-size: 1.1rem;
     margin: 10px 0 5px;
     font-weight: bold;
+    color: #fff; /* White text */
 }
 
 .profile-role {
     font-size: 0.9rem;
-    color: #777;
+    color: #bbb; /* Light gray for roles */
 }
 
 ::-webkit-scrollbar {
