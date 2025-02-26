@@ -1,0 +1,44 @@
+/* Add this to your styles.css file */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+header {
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#fullscreen-button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#fullscreen-button:hover {
+    background: #0056b3;
+}
+
+.game-container {
+    width: 100%;
+    height: calc(100vh - 60px); /* Full height minus header height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000; /* Optional: Add a background color */
+}
+
+#game-iframe {
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove iframe border */
+}
