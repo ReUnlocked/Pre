@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game - ReUnlocked</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <link rel="icon" href="https://raw.githubusercontent.com/ReUnlocked/Assets/refs/heads/main/icon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/">
+                <img src="https://raw.githubusercontent.com/ReUnlocked/Assets/refs/heads/main/branding.png" alt="ReUnlocked Logo">
+                <span>ReUnlocked</span>
+            </a>
+        </div>
+        <button id="fullscreen-button">Full Screen</button>
+    </header>
+
+    <div class="game-container">
+        <iframe id="game-iframe" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const gameName = window.location.pathname.split('/').pop();
+            const iframe = document.getElementById('game-iframe');
+            iframe.src = `/games/${gameName}`;
+
+            const fullscreenButton = document.getElementById('fullscreen-button');
+            fullscreenButton.addEventListener('click', () => {
+                if (iframe.requestFullscreen) {
+                    iframe.requestFullscreen();
+                } else if (iframe.mozRequestFullScreen) { // Firefox
+                    iframe.mozRequestFullScreen();
+                } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+                    iframe.webkitRequestFullscreen();
+                } else if (iframe.msRequestFullscreen) { // IE/Edge
+                    iframe.msRequestFullscreen();
+                }
+            });
+
+            // Handle ReUnlocked settings
+            const tabName = localStorage.getItem("tabName");
+            const faviconURL = localStorage.getItem("faviconURL");
+
+            if (tabName) document.title = tabName;
+            if (faviconURL) {
+                let link = document.querySelector("link[rel='icon']");
+                if (!link) {
+                    link = document.createElement("link");
+                    link.rel = "icon";
+                    document.head.appendChild(link);
+                }
+                link.href = faviconURL;
+            }
+        });
+    </script>
+</body>
+</html>
